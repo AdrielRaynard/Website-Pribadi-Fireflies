@@ -1,12 +1,12 @@
 // Semua konten utama ada di file ini. Edit di sini, bukan di komponen.
 export const site = {
-  name: "Nama Anda", // TODO: ganti dengan nama/brand Anda
+  name: "Fireflies",
   title: "Independent Web Developer",
   url: "https://example.com", // TODO: ganti dengan domain asli
   description:
     "Jasa pembuatan website yang profesional, responsive, dan sesuai kebutuhan untuk bisnis, UMKM, profesional, agency, dan organisasi.",
-  email: "halo@example.com", // TODO
-  whatsapp: "6281234567890", // TODO: format internasional tanpa + atau spasi
+  email: "fireflieswebsite@gmail.com",
+  whatsapp: "62895358976993", // format internasional tanpa + atau spasi
   whatsappText: "Halo, saya ingin konsultasi pembuatan website.",
 };
 export const waLink = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.whatsappText)}`;

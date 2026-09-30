@@ -36,7 +36,7 @@ export default function Hero() {
             Website yang dibangun agar bisnis Anda tampil lebih profesional.
           </h1>
           <p className="rise mt-6 max-w-xl text-lg leading-relaxed text-ink/75" style={{ animationDelay: ".16s" }}>
-            Saya membantu bisnis, UMKM, profesional, agency, dan organisasi memiliki website yang responsive, jelas strukturnya, dan bisa dikembangkan sesuai kebutuhan.
+            Saya adalah seorang mahasiswa Fakultas Ilmu Komputer Universitas Indonesia yang ingin membantu bisnis, UMKM, profesional, agency, dan organisasi memiliki website yang responsive, jelas strukturnya, dan bisa dikembangkan sesuai kebutuhan.
           </p>
           <div className="rise mt-9 flex flex-col gap-3 sm:flex-row" style={{ animationDelay: ".24s" }}>
             <LinkButton href="/contact">Konsultasi Gratis</LinkButton>
