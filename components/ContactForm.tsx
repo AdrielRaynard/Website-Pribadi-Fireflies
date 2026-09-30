@@ -1,25 +1,34 @@
 "use client";
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
 import { services, waLink } from "@/data/site";
 import { submitLead } from "@/lib/submitLead";
 
 type Status = "idle" | "sending" | "success" | "error";
 
+const DEFAULT_ERROR = "Permintaan belum terkirim. Periksa koneksi Anda lalu coba lagi, atau hubungi lewat WhatsApp.";
+
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState(DEFAULT_ERROR);
+  const submittingRef = useRef(false); // cegah request ganda (klik ganda / tekan Enter berulang)
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (submittingRef.current) return;
     const form = e.currentTarget;
     const d = new FormData(form);
     const get = (k: string) => String(d.get(k) ?? "").trim();
+    submittingRef.current = true;
     setStatus("sending");
     try {
-      await submitLead({ name: get("name"), email: get("email"), type: get("type"), budget: get("budget"), message: get("message") });
+      await submitLead({ name: get("name"), email: get("email"), type: get("type"), budget: get("budget"), message: get("message"), _gotcha: get("_gotcha") });
       setStatus("success");
       form.reset();
-    } catch {
+    } catch (err) {
+      setErrorMessage(err instanceof Error && err.message ? err.message : DEFAULT_ERROR);
       setStatus("error");
+    } finally {
+      submittingRef.current = false;
     }
   }
 
@@ -49,6 +58,10 @@ export default function ContactForm() {
         <label htmlFor="message" className="text-sm font-semibold">Deskripsi kebutuhan</label>
         <textarea id="message" name="message" required rows={5} className="field" placeholder="Ceritakan tujuan website, target pengunjung, dan referensi yang Anda suka." />
       </div>
+      <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+        <label htmlFor="_gotcha">Jangan diisi</label>
+        <input id="_gotcha" name="_gotcha" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
       <button type="submit" disabled={status === "sending"} className="btn btn-primary w-full disabled:opacity-60">
         {status === "sending" ? "Mengirim..." : "Kirim Permintaan"}
       </button>
@@ -61,7 +74,7 @@ export default function ContactForm() {
         )}
         {status === "error" && (
           <p role="alert" className="rounded-xl border border-accent/40 bg-accent/5 p-4 text-sm text-accent">
-            Permintaan belum terkirim. Periksa koneksi Anda lalu coba lagi, atau hubungi lewat WhatsApp.
+            {errorMessage}
           </p>
         )}
       </div>

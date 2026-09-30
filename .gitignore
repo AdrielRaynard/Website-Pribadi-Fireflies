@@ -1,3 +1,8 @@
 node_modules
 .next
 next-env.d.ts
+
+# Environment variables (berisi API key, jangan pernah di-commit)
+.env
+.env.local
+.env.*.local
