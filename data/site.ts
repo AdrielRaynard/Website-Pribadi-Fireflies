@@ -51,7 +51,7 @@ export type Project = {
 };
 export const projects: Project[] = [
   { slug: "kopi-senja", name: "Kopi Senja", category: "Coffee Shop / Landing Page", description: "Landing page untuk kedai kopi lokal: menu, lokasi, jam buka, dan tombol pesan lewat WhatsApp.", stack: ["HTML", "CSS", "JavaScript"], colors: ["#3b2a20", "#c8814a"], url: "https://concept-project-kopi-senja.vercel.app/", image: "/images/brand/kopi-senja-preview.png" },
-  { slug: "arunika-creative", name: "Arunika Creative", category: "Creative Agency / Company Profile", description: "Company profile untuk agensi kreatif: layanan, studi kasus, tim, dan formulir kontak.", stack: ["Next.js", "TypeScript", "Tailwind CSS"], colors: ["#15294d", "#8e1b2b"] },
+  { slug: "raya-transport", name: "Raya Transport", category: "Car Rental / Company Profile", description: "Company profile untuk rental mobil Yogyakarta: layanan, armada, destinasi, FAQ, dan tombol booking.", stack: ["HTML", "CSS", "JavaScript"], colors: ["#15294d", "#e8a23a"], url: "https://concept-projectraya-transport.vercel.app/", image: "/images/brand/raya-transport-preview.png" },
   { slug: "arga-pratama", name: "Arga Pratama", category: "Personal Portfolio", description: "Portfolio personal untuk fotografer: galeri karya, tentang, dan ajakan untuk memesan sesi.", stack: ["React", "Tailwind CSS"], colors: ["#2b2f42", "#9aa5d1"], url: "https://concept-projectarga-pratama.vercel.app/", image: "/images/brand/arga-pratama-preview.png" },
 ];
 
