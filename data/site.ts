@@ -1,13 +1,20 @@
 // Semua konten utama ada di file ini. Edit di sini, bukan di komponen.
+import { siteUrl } from "./siteUrl";
+
 export const site = {
   name: "Fireflies",
   title: "Independent Web Developer",
-  url: "https://example.com", // TODO: ganti dengan domain asli
+  // URL publik diisi lewat NEXT_PUBLIC_SITE_URL (lihat .env.example & next.config.mjs).
+  url: siteUrl,
+  // Judul & deskripsi default untuk mesin pencari (halaman utama). Idealnya judul <= 60 dan deskripsi <= 160 karakter.
+  seoTitle: "Jasa Pembuatan Website Profesional | Fireflies Web Developer",
   description:
-    "Jasa pembuatan website yang profesional, responsive, dan sesuai kebutuhan untuk bisnis, UMKM, profesional, agency, dan organisasi.",
+    "Jasa pembuatan website profesional untuk bisnis, UMKM, dan personal brand: landing page, company profile, portfolio, hingga website custom. Konsultasi gratis.",
   email: "fireflieswebsite@gmail.com",
   whatsapp: "62895358976993", // format internasional tanpa + atau spasi
   whatsappText: "Halo, saya ingin konsultasi pembuatan website.",
+  // Tanggal terakhir konten diperbarui (YYYY-MM-DD). Dipakai di sitemap.xml. Ubah saat konten berubah signifikan.
+  lastUpdated: "2026-10-01",
 };
 export const waLink = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.whatsappText)}`;
 

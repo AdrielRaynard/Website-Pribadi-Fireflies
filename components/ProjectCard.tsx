@@ -10,7 +10,7 @@ export default function ProjectCard({ project: p }: { project: Project }) {
           <div className="flex shrink-0 gap-1.5 border-b border-black/5 px-3 py-2"><i className="h-1.5 w-1.5 rounded-full bg-black/20" /><i className="h-1.5 w-1.5 rounded-full bg-black/20" /><i className="h-1.5 w-1.5 rounded-full bg-black/20" /></div>
           {p.image ? (
             <div className="relative min-h-0 flex-1">
-              <Image src={p.image} alt={`${p.name} website preview`} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-top" />
+              <Image src={p.image} alt={`Tampilan website ${p.name}, concept project ${p.category}`} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-top" />
             </div>
           ) : (
             <div className="space-y-2.5 p-4">

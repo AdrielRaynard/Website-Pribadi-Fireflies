@@ -1,9 +1,12 @@
 import { Section, Heading, LinkButton } from "./ui";
 import { faqs } from "@/data/site";
+import JsonLd from "./JsonLd";
+import { faqSchema } from "@/lib/seo";
 
 export default function FAQ() {
   return (
     <Section id="faq">
+      <JsonLd data={faqSchema()} />
       <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
         <div>
           <Heading title="Pertanyaan yang sering diajukan" desc="Belum menemukan jawabannya? Tanyakan langsung, konsultasi awal gratis." />

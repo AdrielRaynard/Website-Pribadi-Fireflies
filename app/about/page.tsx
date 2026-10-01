@@ -1,14 +1,21 @@
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbSchema, webPageSchema } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
 import { PageHeader, Section, Heading } from "@/components/ui";
 import TechStack from "@/components/TechStack";
 import CTA from "@/components/CTA";
 import { approach } from "@/data/site";
 
-export const metadata = pageMeta("Tentang", "Independent web developer yang berfokus pada website modern, responsive, dan sesuai kebutuhan bisnis.", "/about");
+const PAGE_TITLE = "Tentang Saya, Web Developer Independen";
+const PAGE_DESC = "Kenali Fireflies, independent web developer yang membangun website modern, responsive, dan sesuai kebutuhan bisnis, UMKM, dan profesional di Indonesia.";
+export const metadata = pageMeta(PAGE_TITLE, PAGE_DESC, "/about");
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={[
+        webPageSchema("AboutPage", PAGE_TITLE, PAGE_DESC, "/about"),
+        breadcrumbSchema([{ name: "Tentang", path: "/about" }]),
+      ]} />
       <PageHeader title="Saya membangun website yang rapi, jelas, dan sesuai kebutuhan." desc="Saya sedang membangun layanan web development yang berfokus pada pembuatan website modern, responsive, dan sesuai kebutuhan bisnis." />
       <Section>
         <div className="grid gap-12 md:grid-cols-2">

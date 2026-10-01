@@ -33,7 +33,7 @@ export default function Hero() {
         <div>
           <p className="rise font-mono text-sm text-accent">Independent Web Developer</p>
           <h1 className="rise mt-5 font-display text-[2.6rem] leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl" style={{ animationDelay: ".08s" }}>
-            Website yang dibangun agar bisnis Anda tampil lebih profesional.
+            Jasa pembuatan website agar bisnis Anda tampil lebih profesional.
           </h1>
           <p className="rise mt-6 max-w-xl text-lg leading-relaxed text-ink/75" style={{ animationDelay: ".16s" }}>
             Halo, saya adalah seorang mahasiswa Fakultas Ilmu Komputer Universitas Indonesia yang ingin membantu bisnis, UMKM, profesional, agency, dan organisasi memiliki website yang responsive, jelas strukturnya, dan bisa dikembangkan sesuai kebutuhan.

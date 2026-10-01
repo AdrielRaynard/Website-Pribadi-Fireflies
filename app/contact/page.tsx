@@ -1,13 +1,20 @@
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbSchema, webPageSchema } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
 import { PageHeader, Section } from "@/components/ui";
 import ContactForm from "@/components/ContactForm";
 import { site, waLink } from "@/data/site";
 
-export const metadata = pageMeta("Kontak", "Konsultasi gratis untuk project website Anda lewat WhatsApp, email, atau formulir.", "/contact");
+const PAGE_TITLE = "Konsultasi Gratis Pembuatan Website";
+const PAGE_DESC = "Konsultasi gratis project website Anda lewat WhatsApp, email, atau formulir. Ceritakan kebutuhan Anda, estimasi disesuaikan dengan scope project.";
+export const metadata = pageMeta(PAGE_TITLE, PAGE_DESC, "/contact");
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={[
+        webPageSchema("ContactPage", PAGE_TITLE, PAGE_DESC, "/contact"),
+        breadcrumbSchema([{ name: "Kontak", path: "/contact" }]),
+      ]} />
       <PageHeader title="Punya ide website? Mari kita wujudkan." desc="Ceritakan kebutuhan Anda. Konsultasi awal gratis, dan estimasi disesuaikan dengan scope dan kompleksitas project." />
       <Section>
         <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
